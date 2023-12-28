@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gestion des infirmières</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../general_styles.css">
+        <link rel="stylesheet" href="./doc_styles.css">
+        
+        <script>
+
+        $(document).ready(function () {
+            $("#docNav").load("docNav.html", function(){
+                
+            });
+        });
+            
+        </script>
+    </head>
+    
+
+    <body>
+        <div id="topMenu" class="container-fluid">
+            <ul id="topNav" class="nav nav-tabs">
+                <li><a href="../index.php">Agenda</a></li>
+                <li><a href="../Visites.php">Planning</a></li>
+                <li><a href="../Infirmieres.php">Infirmières</a></li>
+                <li><a href="../Configuration.php">Configuraion</a></li>
+                <li><a href="index.html">Documentation</a></li>
+            </ul>
+        </div>
+        <div class ="titleBar">
+           <h4> Gestion des infirmières </h4>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 leftSide">
+                <div id = "docNav"></div>
+            </div>
+
+            <div class="col-sm-9">
+                <h4>Introduction</h4>
+                <p class = "ag_p">
+                    Il est possible d'ajouter autant d'infirmières que nécessaires. Seul le nombre d'infirmières actives est limité, en fonction de la licence choisie. 
+                    Il n'est pas possible d'enlever une infirmière qui a effectué des visites, pour des raisons de tracabilité.   
+                </p>
+                <h4>L'écran "Infirmières"</h4>
+                <p class = "ag_p">
+                    <img class = "doc_img_right" src="nicolas.regnauld.free.fr/Documentation/images/Infirmières_screen.JPG" style = "width:400px" alt="Ecran Infirmières">
+                    L'écran principal de la zone "Infirmière" est composé de:              
+                </p>
+                <ul>
+                    <li>La barre de navigation: elle permet d'accéder aux autres zones de l'application</li>
+                    <li>La partie gauche: elle permet de voir la liste des infirmières et d'accéder aux informations qui leurs sont associées. Elle contient un filtre 
+                        pour cacher ou pas les infirmières inactives, un bouton "+" pour ajouter une nouvelle infirmière, et la liste des infirmières</li>
+                    <li>La partie droite: c'est là que les informations associées à une infirmière sont affichées et peuvent être modifiées.</li>
+                </ul>
+                
+   
+                <h4>Liste d'infirmières</h4> 
+                <p> La liste d'infirmières qui s'affiche dépend de la valeur choisie pour le filtre. Trois choix sont possibles: </p>
+                <ul>
+                    <li>"Actives": seules les infirmières actives sont affichées dans la liste</li>
+                    <li>"Inactives": seules les infirmières inactives sont affichées dans la liste</li>
+                    <li>"Toutes": toutes les infirmières sont listées</li>
+                </ul>                
+                <h4>Ajout d'une nouvelle infirmière</h4>
+                <p>En cliquant sur le bouton "+" en haut de la colonne de gauche, on ajoute une nouvelle infirmière. La liste des champs à remplir pour cette nouvelle infirmière
+                    s'affiche dans la colonne de droite. Les champs marqués d'un <span style='color:red'>*</span> sont obligatoires. Les autres sont facultatif. Les champs 
+                    facultatifs ne sont pas utilisés par le service, mais peuvent être utiles pour qu'une infirmière puisse obtenir une information sur une de ces collègues, 
+                    par exemple son numéro de téléphone.<br> Liste des champs:
+                </p>
+                <ul>
+                    <li><strong>Nom <span style='color:red'>*</span></strong>: le nom de l'infirmière, c'est lui qui s'affiche dans la liste des infirmières, et à d'autres endroits de l'agenda</li>
+                    <li><strong>Prénom</strong>: le prénom de l'infirmière. Il peut être utile pour différencier les infirmières d'un même groupement</li>
+                    <li><strong>Statut <span style='color:red'>*</span></strong>: choisir l'un des deux statuts possible (actif ou inactif). La licence limite le nombre d'infirmières actives en même temps. Une infirmière 
+                        inactive peut redevenir active à tout moment. Cela permet par exemple d'avoir plusieurs remplaçantes dans le systèmes, et de n'en activer qu'une seule 
+                        à la fois. </li>
+                    <li><strong>Indentifiant <span style='color:red'>*</span></strong>: l'identifiant sert à l'infirmière pour se connecter au service. Il doit être unique. Deux infirmières ne peuvent pas 
+                        avoir le même identifiant, mêmes si elles appartiennent à des groupements différents. Au cas ou l'identifiant demandé est déjà pris, le système vous 
+                        en informe et vous demande d'en choisir un autre. </li>
+                    <li><strong>Email <span style='color:red'>*</span></strong>: l'adresse email sera utilisée lors de la première connection de l'infirmière pour établir un mot de passe, ou plus tard
+                        pour le changer (en cas d'oubli par exemple). Il n'est utilisé à aucune autre fin.</li>
+                    <li><strong>Adresse</strong>: l'adresse de l'infirmière.</li>
+                    <li><strong>Tel. fixe</strong>:  le numéro de téléphone du domicile de l'infirmière.</li>
+                    <li><strong>Tel. portable</strong>: le numéro de téléphone portable de l'infirmière.</li>
+                    <li><strong>Notes</strong>: Un champ libre pour inscrire n'importe quelle information utile.</li>
+                </ul>
+                <p>
+                    Une fois les champs renseignés, appuyez sur le bouton "enregistrer" en bas de la page. Si la création est réussie, un message apparait dans la partie droite et 
+                    la nouvelle infirmière apparait dans la liste de gauche (à condition que le bon filtre soit sélectionné). Sinon, une fenêtre apparait avec un message d'erreur, et
+                    vous pouvez modifier les champs avant de réessayer l'enregistrement.
+                </p>
+                <h4>Visualisation et modification des informations associées à une infirmière</h4>
+                <p>En cliquant sur le nom d'une infirmière dans la liste (partie gauche), les informations associées à cette infirmière sont affichées dans la partie droite. Les champs sont les mêmes que pour la création 
+                    d'une nouvelle infirmière. Ils peuvent être modifiés, à condition de respecter les règles décrite ci-dessus (champs obligatiores et unicité de l'identifiant). Dès qu'un champ est modifié, le bouton "Modifier" 
+                    en bas de la page devient actif. Appuyez sur ce bouton pour enregistrer les modifications. En cas de succès un message s'affiche dans la partie droite, sinon une fenêtre apparait avec un message d'erreur qui 
+                    indique la cause du problème.
+                </p>
+                <h4>Effacement d'une infirmière</h4>
+                <p>Pour Eliminer un infirmière de la base de données, sélectionner cette infirmière dans la liste sur la partie gauche de la page. Les informations sur cette infirmière
+                    apparaissent alors dans la partie gauche de la page, et tout en bas à droite, un bouton "Supprimer" permet d'efffacer cette infirmière. En appyuyant sur ce bouton, 
+                    le système vous demandera de confirmer votre choix, puis effectuera la destruction. Attention, une infirmière ne peut être détruite que si elle n'a effectué aucune visite. 
+                    Sinon, elle est conservée par le systeme pour des raisons de traçabilité. Il faut alors simplement mettre son statut à "inactif". En cas d'échec de la destruction, une fenêtre 
+                    apparait avec un message d'explication, sinon un message de confirmation apparait en partie droite, tandis que l'infirmière disparait de la liste en partie gauche.  
+                </p>
+                <h4>Gestion des disponibilités d'une infirmière</h4>
+                <p class = "ag_p">
+                    Pour voir et modifier les disponibilités d'une infirmière, il suffit de cliquer sur  le bouton <button class="docButton glyphicon glyphicon-calendar"></button> à droite de l'infirmière dans la liste.
+                    
+                    
+                </p>
+                
+            </div>
+        </div>
+
+    </body>
+</html>

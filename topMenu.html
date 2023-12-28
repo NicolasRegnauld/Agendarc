@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <ul id="topNav" class="nav nav-tabs">
+    <li><a href="index.php">Agenda</a></li>
+    <li><a href="Visites.php">Planning</a></li>
+    <li><a href="Infirmieres.php">Infirmières</a></li>
+    <li><a href="Configuration.php">Configuraion</a></li>
+    <li><a href=# onclick = "switchmsg()">Messages</a></li>
+    <li><a href="Documentation/index.html">Documentation</a></li>
+  </ul>    
+</div>
+<div id="msgBox"></div>
+<div id="espaceModalNewMessage"></div>
+
+<script>
+    function switchmsg() {
+        $("#msgBox").toggle();
+    }
+        
+    $("#espaceModalMessage").html(getNewMessageModalForm());
+    $('#msgBox').load('list_messages.php');
+    
+     $(document).on('click', '#addMessage', function() { 
+         addMessage(); 
+         $('#msgBox').load('list_messages.php');
+     });
+
+    refresh();
+
+    function refresh()
+        {
+        setTimeout( function()
+                {
+                $('#msgBox').load('list_messages.php');
+                refresh();
+                }, 30000);
+        }
+
+  
+</script>    
