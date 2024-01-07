@@ -55,7 +55,7 @@ function getInfTournees($date) {
 }
 
 if (isset($_POST['date'])){
-    $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
+    $date = filter_input(INPUT_POST, 'date');
     echo getInfTournees($date);
 }
 else 

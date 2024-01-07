@@ -48,11 +48,11 @@ if (isset($_POST['abr'])&&
     isset($_POST['end1']) &&
     isset($_POST['tournee'])){
 
-    $abr = filter_input(INPUT_POST, 'abr', FILTER_SANITIZE_STRING);
-    $desc = filter_input(INPUT_POST, 'desc', FILTER_SANITIZE_STRING);
-    $start1 = filter_input(INPUT_POST, 'start1', FILTER_SANITIZE_STRING);
-    $end1 = filter_input(INPUT_POST, 'end1', FILTER_SANITIZE_STRING);
-    $tournee = filter_input(INPUT_POST, 'tournee', FILTER_SANITIZE_STRING);
+    $abr = filter_input(INPUT_POST, 'abr');
+    $desc = filter_input(INPUT_POST, 'desc');
+    $start1 = filter_input(INPUT_POST, 'start1');
+    $end1 = filter_input(INPUT_POST, 'end1');
+    $tournee = filter_input(INPUT_POST, 'tournee');
     echo trim(json_encode(nouvelleHoraire($tournee, $abr,$desc, $start1, $end1)));
 }
 else 

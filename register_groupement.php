@@ -7,7 +7,6 @@ function chargerClasse($classname)
 spl_autoload_register('chargerClasse');
 session_start();
 include_once 'connexion.php';
-require("PasswordHash.php");
 $db = getPDO();
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 $db->query("SET NAMES 'utf8'");
@@ -72,13 +71,13 @@ if (isset($_POST['groupement'])&&
     isset($_POST['confirmPassword'])&&
     isset($_POST['nom'])&&
     isset($_POST['prenom'])){
-    $groupement = filter_input(INPUT_POST, 'groupement', FILTER_SANITIZE_STRING);
+    $groupement = filter_input(INPUT_POST, 'groupement');
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $identifiant = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    $pass2 = filter_input(INPUT_POST, 'confirmPassword', FILTER_SANITIZE_STRING);
-    $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
-    $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
+    $identifiant = filter_input(INPUT_POST, 'username');
+    $pass = filter_input(INPUT_POST, 'password');
+    $pass2 = filter_input(INPUT_POST, 'confirmPassword');
+    $nom = filter_input(INPUT_POST, 'nom');
+    $prenom = filter_input(INPUT_POST, 'prenom');
     if (filter_var($email, FILTER_VALIDATE_EMAIL)){
         if ($pass === $pass2){
             echo register_gr($manager, $groupement, $email, $identifiant, $pass, $nom, $prenom);

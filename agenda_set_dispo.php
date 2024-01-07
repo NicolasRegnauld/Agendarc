@@ -89,7 +89,7 @@ if (isset($_POST['year'])&&
     $year = filter_input(INPUT_POST, 'year', FILTER_SANITIZE_NUMBER_INT);
     $day = filter_input(INPUT_POST, 'day', FILTER_SANITIZE_NUMBER_INT);
     $infId = filter_input(INPUT_POST, 'infId', FILTER_SANITIZE_NUMBER_INT);
-    $newHoraires = filter_input(INPUT_POST, 'newVal', FILTER_SANITIZE_STRING);
+    $newHoraires = filter_input(INPUT_POST, 'newVal');
 
  //   echo "params: " . ", " . $month . ", " . $year . ", " . $day . ", " . $infId . ", " . $newVal;
     echo trim(json_encode(setDispo($year,$month,$day,$infId,$newHoraires)));

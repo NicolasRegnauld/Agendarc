@@ -56,7 +56,7 @@ function deleteFutureVisites ($clientId, $date){
 if (isset($_POST['clientId']) &&
     isset($_POST['date'])){
     $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
-    $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
+    $date = filter_input(INPUT_POST, 'date');
     echo json_encode(deleteFutureVisites($clientId, $date));
 }
 else 

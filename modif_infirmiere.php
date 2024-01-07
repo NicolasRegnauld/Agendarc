@@ -54,15 +54,15 @@ if (isset($_POST['id'])&&
     isset($_POST['notes'])){
 		
     $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-    $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
-    $prénom = filter_input(INPUT_POST, 'prénom', FILTER_SANITIZE_STRING);
-    $statut = filter_input(INPUT_POST, 'statut', FILTER_SANITIZE_STRING);
-    $identifiant = filter_input(INPUT_POST, 'identifiant', FILTER_SANITIZE_STRING);
+    $nom = filter_input(INPUT_POST, 'nom');
+    $prénom = filter_input(INPUT_POST, 'prénom');
+    $statut = filter_input(INPUT_POST, 'statut');
+    $identifiant = filter_input(INPUT_POST, 'identifiant');
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $tel_fixe = filter_input(INPUT_POST, 'tel_fixe', FILTER_SANITIZE_STRING);
-    $tel_portable = filter_input(INPUT_POST, 'tel_portable', FILTER_SANITIZE_STRING);
-    $adresse = filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_STRING);
-    $notes = filter_input(INPUT_POST, 'notes', FILTER_SANITIZE_STRING);
+    $tel_fixe = filter_input(INPUT_POST, 'tel_fixe');
+    $tel_portable = filter_input(INPUT_POST, 'tel_portable');
+    $adresse = filter_input(INPUT_POST, 'adresse');
+    $notes = filter_input(INPUT_POST, 'notes');
 
     if ($nom == ""){
          $res["message"] =  "Impossible d'effectuer les modifications, le champ 'nom' ne peut pas être vide";

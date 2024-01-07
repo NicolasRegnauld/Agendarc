@@ -43,7 +43,7 @@ function getInfsForTournee($date, $selTournees) {
 if (isset($_POST['date'])&&
     isset($_POST['tournees'])){
     $tournees = "(".implode(',', $_POST['tournees']).")";
-    $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
+    $date = filter_input(INPUT_POST, 'date');
     echo getInfsForTournee($date,$tournees);
 }
 else 

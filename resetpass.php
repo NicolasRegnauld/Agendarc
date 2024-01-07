@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once 'connexion.php';
-require("PasswordHash.php");
 
 $connectDetails = getConnectionDetails();
 // Create connection

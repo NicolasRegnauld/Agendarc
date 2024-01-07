@@ -120,9 +120,9 @@ if (isset($_POST["visiteId"]) &&
     isset($_POST["heure"])){
    
     $visitId = filter_input(INPUT_POST, 'visiteId', FILTER_SANITIZE_NUMBER_INT);
-    $infString = filter_input(INPUT_POST, 'infirmièreId', FILTER_SANITIZE_STRING);
-    $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
-    $heure = filter_input(INPUT_POST, 'heure', FILTER_SANITIZE_STRING);
+    $infString = filter_input(INPUT_POST, 'infirmièreId');
+    $date = filter_input(INPUT_POST, 'date');
+    $heure = filter_input(INPUT_POST, 'heure');
 
     echo modifVisiteTime($visitId, $infString, $heure, $date);
  
