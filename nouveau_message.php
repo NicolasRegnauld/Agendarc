@@ -33,7 +33,7 @@ return $res;
 }
 
 if (isset($_POST['messageContent'])){
-    $messageContent = filter_input(INPUT_POST, 'messageContent', FILTER_SANITIZE_STRING);
+    $messageContent = filter_input(INPUT_POST, 'messageContent');
     echo trim(json_encode(addMessage($messageContent)));
     }
  else     

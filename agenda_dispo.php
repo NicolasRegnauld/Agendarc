@@ -79,8 +79,8 @@ return $res;
 if (isset($_POST['year'])&&
       isset($_POST['month'])&&
       isset($_POST['infId'])){
-    $month = filter_input(INPUT_POST, 'month', FILTER_SANITIZE_STRING);
-    $year = filter_input(INPUT_POST, 'year', FILTER_SANITIZE_STRING);
+    $month = filter_input(INPUT_POST, 'month');
+    $year = filter_input(INPUT_POST, 'year');
     $infId = filter_input(INPUT_POST, 'infId', FILTER_SANITIZE_NUMBER_INT);
     echo getAgenda($year,$month,$infId);
 }

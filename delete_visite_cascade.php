@@ -62,8 +62,8 @@ if (isset($_POST['visiteId']) &&
     isset($_POST['dateFin'])){
     $id = filter_input(INPUT_POST, 'visiteId', FILTER_SANITIZE_NUMBER_INT);
     $delParent = filter_input(INPUT_POST, 'delParent', FILTER_SANITIZE_NUMBER_INT);
-    $dateDebut = filter_input(INPUT_POST, 'dateDebut', FILTER_SANITIZE_STRING);
-    $dateFin = filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_STRING);
+    $dateDebut = filter_input(INPUT_POST, 'dateDebut');
+    $dateFin = filter_input(INPUT_POST, 'dateFin');
     echo trim(json_encode(deleteVisite($id, $delParent, $dateDebut, $dateFin)));
 }
 else 

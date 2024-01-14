@@ -24,11 +24,27 @@ function generateRandomString($length = 20) {
 
 
 function send_mail($to, $token) {
-    $mail = new PHPMailer;
+    $mail = new PHPMailer(TRUE);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.ionos.fr';
+    $mail->SMTPAuth = true;
+    $mail->Username = "support@agendarc.com";
+    $mail->Password = "jd7Ui9(re3";
+    $mail->SMTPSecure = "ssl";
+
+    $mail->Port = 465;
     $mail->CharSet="UTF-8";
+    $mail->Encoding = 'base64';
+    $mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true)
+        );
     $mail->setFrom('support@agendarc.com', 'Support Agendarc');
     $mail->addAddress($to);
     $mail->Subject = 'Réinitialisation de votre mot de passe';
+//    $link = 'http://agendarcresetbug/Agendarc/resetpass.php?email='.$to.'&token='.$token;
     $link = 'http://agendarc.com/fr/resetpass.php?email='.$to.'&token='.$token;
     $mail->Body = "Bonjour. Vous avez demander la réinitialisation de votre mot de passe. Suivez ce lien pour réinitiliser votre mot de passe: $link. Si le lien ne fonctionne pas, copier l'adresse dans votre navigateur.";
 
@@ -82,10 +98,10 @@ if ($conn->connect_error) {
 
     
 if (isset($_POST['ident_mail'])){
-    $ident_email = filter_input(INPUT_POST, 'ident_mail', FILTER_SANITIZE_STRING);
+    $ident_email = filter_input(INPUT_POST, 'ident_mail');
     echo sendResetEmail($ident_email);
 }
 else{ 
-    echo "missing argument for resetting password2";
+    echo "missing argument for resetting password";
 }
 ?>

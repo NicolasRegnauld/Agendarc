@@ -158,9 +158,9 @@ if (isset($_POST['titre'])&&
     isset($_POST['notes']) &&
     isset($_POST['jours']) &&    
     isset($_POST['parentId'])){
-    $titre = filter_input(INPUT_POST, 'titre', FILTER_SANITIZE_STRING);
-    $tournée = filter_input(INPUT_POST, 'tournée', FILTER_SANITIZE_STRING);
-    $adresse = filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_STRING);
+    $titre = filter_input(INPUT_POST, 'titre');
+    $tournée = filter_input(INPUT_POST, 'tournée');
+    $adresse = filter_input(INPUT_POST, 'adresse');
     $infId = filter_input(INPUT_POST, 'infirmièreId', FILTER_SANITIZE_NUMBER_INT);
     $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
     $dateDébut = filter_input(INPUT_POST, 'dateDébut', FILTER_SANITIZE_NUMBER_INT);
@@ -170,12 +170,12 @@ if (isset($_POST['titre'])&&
     $rec = filter_input(INPUT_POST, 'rec', FILTER_SANITIZE_NUMBER_INT);
     $durée = filter_input(INPUT_POST, 'durée', FILTER_SANITIZE_NUMBER_INT);
     $alerte = filter_input(INPUT_POST, 'alerte', FILTER_SANITIZE_NUMBER_INT);
-    $alerte_message = filter_input(INPUT_POST, 'alerteMessage', FILTER_SANITIZE_STRING);
-    $notes = filter_input(INPUT_POST, 'notes', FILTER_SANITIZE_STRING);
-    $clientNom = filter_input(INPUT_POST, 'clientNom', FILTER_SANITIZE_STRING);
-    $clientPrenom = filter_input(INPUT_POST, 'clientPrenom', FILTER_SANITIZE_STRING);
-    $clientAdr = filter_input(INPUT_POST, 'clientAdr', FILTER_SANITIZE_STRING);
-    $clientTel = filter_input(INPUT_POST, 'clientTel', FILTER_SANITIZE_STRING);
+    $alerte_message = filter_input(INPUT_POST, 'alerteMessage');
+    $notes = filter_input(INPUT_POST, 'notes');
+    $clientNom = filter_input(INPUT_POST, 'clientNom');
+    $clientPrenom = filter_input(INPUT_POST, 'clientPrenom');
+    $clientAdr = filter_input(INPUT_POST, 'clientAdr');
+    $clientTel = filter_input(INPUT_POST, 'clientTel');
     $statut = filter_input(INPUT_POST, 'statut', FILTER_SANITIZE_NUMBER_INT);
     $parentId = filter_input(INPUT_POST, 'parentId', FILTER_SANITIZE_NUMBER_INT);
     $jours = $_POST['jours'];

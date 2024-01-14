@@ -145,17 +145,17 @@ if (isset($_POST["visiteId"]) &&
     $parentId = filter_input(INPUT_POST, 'parentId', FILTER_SANITIZE_NUMBER_INT);
     $infirmièreId = filter_input(INPUT_POST, 'infirmièreId', FILTER_SANITIZE_NUMBER_INT);
     $statut = filter_input(INPUT_POST, 'statut', FILTER_SANITIZE_NUMBER_INT);
-    $notes = filter_input(INPUT_POST, 'notes', FILTER_SANITIZE_STRING);
-    $titre = filter_input(INPUT_POST, 'titre', FILTER_SANITIZE_STRING);
-    $adresse = filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_STRING);
-    $rapport = filter_input(INPUT_POST, 'rapport', FILTER_SANITIZE_STRING);
-    $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
-    $dateFin = filter_input(INPUT_POST, 'dateFin', FILTER_SANITIZE_STRING);
+    $notes = filter_input(INPUT_POST, 'notes');
+    $titre = filter_input(INPUT_POST, 'titre');
+    $adresse = filter_input(INPUT_POST, 'adresse');
+    $rapport = filter_input(INPUT_POST, 'rapport');
+    $date = filter_input(INPUT_POST, 'date');
+    $dateFin = filter_input(INPUT_POST, 'dateFin');
     $durée = filter_input(INPUT_POST, 'durée', FILTER_SANITIZE_NUMBER_INT);
-    $heure = filter_input(INPUT_POST, 'heure', FILTER_SANITIZE_STRING);
-    $tournée = filter_input(INPUT_POST, 'tournée', FILTER_SANITIZE_STRING);
+    $heure = filter_input(INPUT_POST, 'heure');
+    $tournée = filter_input(INPUT_POST, 'tournée');
     $alerte = filter_input(INPUT_POST, 'alerte', FILTER_SANITIZE_NUMBER_INT);
-    $alerteMessage = filter_input(INPUT_POST, 'alerteMessage', FILTER_SANITIZE_STRING);
+    $alerteMessage = filter_input(INPUT_POST, 'alerteMessage');
 
     echo modifVisite($visitId, $parentId, $infirmièreId, $notes, $titre, $statut, $adresse, $rapport, $date, $dateFin, $durée, $heure, $tournée, $alerte, $alerteMessage);
  

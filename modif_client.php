@@ -34,11 +34,11 @@ if (isset($_POST['nom'])&&
     isset($_POST['tel_fixe'])&&
     isset($_POST['adresse'])&&
     isset($_POST['statut'])){
-    $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
-    $prénom = filter_input(INPUT_POST, 'prénom', FILTER_SANITIZE_STRING);
-    $statut = filter_input(INPUT_POST, 'statut', FILTER_SANITIZE_STRING);
-    $tel_fixe = filter_input(INPUT_POST, 'tel_fixe', FILTER_SANITIZE_STRING);
-    $adresse = filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_STRING);
+    $nom = filter_input(INPUT_POST, 'nom');
+    $prénom = filter_input(INPUT_POST, 'prénom');
+    $statut = filter_input(INPUT_POST, 'statut');
+    $tel_fixe = filter_input(INPUT_POST, 'tel_fixe');
+    $adresse = filter_input(INPUT_POST, 'adresse');
     
     echo modifClient($nom,$prénom,$statut, $tel_fixe, $adresse);
 }

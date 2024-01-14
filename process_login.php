@@ -64,8 +64,8 @@ $conn->close();
 }
 if (isset($_POST['username'])&&
     isset($_POST['password'])){
-    $identifiant = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $identifiant = filter_input(INPUT_POST, 'username');
+    $pass = filter_input(INPUT_POST, 'password');
     login_inf($identifiant, $pass);
 }
 else 

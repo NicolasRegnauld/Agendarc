@@ -50,11 +50,11 @@ if (isset($_POST['id'])&&
     isset($_POST['end1'])){
 
     $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
-    $tournee = filter_input(INPUT_POST, 'tournee', FILTER_SANITIZE_STRING);
-    $abr = filter_input(INPUT_POST, 'abr', FILTER_SANITIZE_STRING);
-    $desc = filter_input(INPUT_POST, 'desc', FILTER_SANITIZE_STRING);
-    $start1 = filter_input(INPUT_POST, 'start1', FILTER_SANITIZE_STRING);
-    $end1 = filter_input(INPUT_POST, 'end1', FILTER_SANITIZE_STRING);
+    $tournee = filter_input(INPUT_POST, 'tournee');
+    $abr = filter_input(INPUT_POST, 'abr');
+    $desc = filter_input(INPUT_POST, 'desc');
+    $start1 = filter_input(INPUT_POST, 'start1');
+    $end1 = filter_input(INPUT_POST, 'end1');
     echo trim(json_encode(modifTournee($tournee, $id,$abr,$desc, $start1, $end1)));
 }
 else 

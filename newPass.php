@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once 'connexion.php';
-require("PasswordHash.php");
 
 $connectDetails = getConnectionDetails();
 // Create connection
@@ -30,9 +29,9 @@ function storePass($conn, $id, $pass){
 if (isset($_POST['id'])&&
     isset($_POST['password1'])&&
     isset($_POST['password2'])){
-    $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
-    $pass1 = filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
-    $pass2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
+    $id = filter_input(INPUT_POST, 'id');
+    $pass1 = filter_input(INPUT_POST, 'password1');
+    $pass2 = filter_input(INPUT_POST, 'password2');
     if ($pass1 != $pass2)
         echo "les deux mots de passes sont différents, veuillez les ressaisir";
     else       
